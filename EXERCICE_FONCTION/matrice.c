@@ -1,27 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-int taille(char nom);
-int **remplir(int n,char nom);
-int **produit(int **X,int **Y,int n);
-void affiche(int **Z,int n);
-int main(){ 
-    int n,m;
-    int **X,**Y;
-    n=taille('X');
-    m=taille('Y');
-    X=remplir(n,'X');
-    Y=remplir(m,'Y');
-    if (n!=m){
-        printf("les matrices ne sont pas compatibles pour le produit");
-        return 1;
-    }
-    int **Z = produit(X,Y,n);
-    affiche(Z,n);
+#include "matrice.h"
 
-    return 0;
-}
+
 int taille(char nom){
-    
     int n;
     printf("entrer le nombre de ligne  de la  matrice %c:",nom);
     scanf("%d",&n);
@@ -55,11 +37,11 @@ int **produit(int **X,int **Y,int n){
             }
         }
     }
-    return produit;
+     return produit;
 }
 void affiche(int **Z,int n){
     int i,j;
-    printf("le produit des deux matrices est:\n");
+    printf("La matrice est:\n");
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             printf("%4d ",Z[i][j]); // %4d c'est pour aligner les colonnes

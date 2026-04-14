@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int taille(char nom);
 int **remplir(int n,char nom);
 int **somme(int **X, int **Y,int n);
 void affiche(int **S,int n);
+
 int main(){
     int n,m;
     int **X, **Y;
